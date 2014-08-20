@@ -31,6 +31,11 @@
         viewController = viewController.parentViewController ? viewController.parentViewController : viewController.presentingViewController;
     }
     
+    //Hack - if we don't add as a childviewcontroller
+    if(!viewController) {
+        viewController = [UIApplication sharedApplication].delegate.window.rootViewController;
+    }
+    
     return (ECSlidingViewController *)viewController;
 }
 

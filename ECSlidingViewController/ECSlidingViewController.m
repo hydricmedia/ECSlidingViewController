@@ -252,7 +252,8 @@
     _topViewController = topViewController;
     
     if (_topViewController) {
-        [self addChildViewController:_topViewController];
+        //Hack - uinavigationcontroller doesn't play nice with this.
+        //[self addChildViewController:_topViewController];
         [_topViewController didMoveToParentViewController:self];
         
         if ([self isViewLoaded]) {
